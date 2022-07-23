@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React from 'react'
 
-function App() {
+function App () {
   return (
     <div className="App">
-    <h3>Challenge</h3>
+      <h3>Challenge</h3>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
