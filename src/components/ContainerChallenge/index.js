@@ -15,10 +15,7 @@ function ContainerChallenge () {
           <Routes>
             <Route
               exact path="/"
-              element={
-                <TableChallenge
-                  title={title}
-              />}
+              element={<TableChallenge title={title}/>}
             />
             <Route
               exact path={'/detail/:id'}
