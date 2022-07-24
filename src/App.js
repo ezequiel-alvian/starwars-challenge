@@ -1,12 +1,10 @@
-import React from 'react';
+import React from 'react'
+import ContainerChallenge from './components/ContainerChallenge'
 
-
-function App() {
+function App () {
   return (
-    <div className="App">
-   challenge
-    </div>
-  );
+      <ContainerChallenge/>
+  )
 }
 
-export default App;
+export default App
