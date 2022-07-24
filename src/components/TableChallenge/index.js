@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import clientAxios from '../../config/axios'
+import RowCaracterChallenge from './RowCaracterChallenge'
 
 const TableChallenge = () => {
-  const [dada, dataSet] = useState()
+  const [data, dataSet] = useState()
   useEffect(() => {
     async function fetchMyAPI () {
       try {
@@ -14,10 +15,27 @@ const TableChallenge = () => {
     }
     fetchMyAPI()
   }, [])
-  console.log(dada)
+
   return (
-    <div>
-      Table
+    <div className="container">
+
+    <table className="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">NAME</th>
+          <th scope="col">BIRTH YEAR</th>
+          <th scope="col">HEIGHT</th>
+          <th scope="col">DETAIL</th>
+        </tr>
+    </thead>
+    <tbody>
+      {data
+        ? <RowCaracterChallenge data={data}/>
+        : null
+    }
+    </tbody>
+    </table>
     </div>
   )
 }
