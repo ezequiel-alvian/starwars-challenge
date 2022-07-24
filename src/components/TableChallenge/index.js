@@ -12,23 +12,23 @@ const TableChallenge = (props) => {
     <div className="container">
       {state.listCaracter
         ? <table className="table table-dark">
-        <thead>
-          <tr>
-            {title.map(t =>
-            <th scope="col" key={t.id}>{t.title}</th>
-            )}
-          </tr>
-      </thead>
-      <tbody>
-          <RowCaracterChallenge
-          listCaracter={state.listCaracter}
-            />
-      </tbody>
-      </table>
+            <thead>
+              <tr>
+                {title.map(t =>
+                <th scope="col" key={t.id}>{t.title}</th>
+                )}
+              </tr>
+          </thead>
+          <tbody>
+              <RowCaracterChallenge
+                listCaracter={state.listCaracter}
+              />
+          </tbody>
+        </table>
         : <div className="spinner-grow text-success" role="status">
-  <span className="sr-only">Loading...</span>
-</div>
-}
+            <span className="sr-only">Loading...</span>
+          </div>
+      }
     </div>
   )
 }

@@ -12,19 +12,19 @@ function ContainerChallenge () {
     <Router>
       <div className="App">
         {
-            <Routes>
-                <Route
-                  exact path="/"
-                  element={
-                    <TableChallenge
-                      title={title}
-                  />}
-                />
-                <Route
-                  exact path={'/detail/:id'}
-                  element={<DetailCaracterChallenge/>}
-                />
-              </Routes>
+          <Routes>
+            <Route
+              exact path="/"
+              element={
+                <TableChallenge
+                  title={title}
+              />}
+            />
+            <Route
+              exact path={'/detail/:id'}
+              element={<DetailCaracterChallenge/>}
+            />
+          </Routes>
         }
       </div>
     </Router>
