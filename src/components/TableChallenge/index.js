@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import RowCaracterChallenge from './RowCaracterChallenge'
+import { ChallengeContext } from '../ProviderChallenge'
 
 const TableChallenge = (props) => {
-  const { data, title } = props
+  const { title } = props
+  const [state] = useContext(ChallengeContext)
 
   return (
+
     <div className="container">
-      <table className="table table-dark">
+      {state.listCaracter
+        ? <table className="table table-dark">
         <thead>
           <tr>
             {title.map(t =>
@@ -16,14 +20,15 @@ const TableChallenge = (props) => {
           </tr>
       </thead>
       <tbody>
-        {data
-          ? <RowCaracterChallenge
-              data={data}
+          <RowCaracterChallenge
+          listCaracter={state.listCaracter}
             />
-          : null
-      }
       </tbody>
       </table>
+        : <div className="spinner-grow text-success" role="status">
+  <span className="sr-only">Loading...</span>
+</div>
+}
     </div>
   )
 }
@@ -31,7 +36,7 @@ const TableChallenge = (props) => {
 export default TableChallenge
 
 TableChallenge.propTypes = {
-  data: PropTypes.object,
+  listCaracter: PropTypes.object,
   title: PropTypes.array,
   dispatch: PropTypes.func
 }

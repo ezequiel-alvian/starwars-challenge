@@ -5,14 +5,13 @@ import { ChallengeContext } from '../ProviderChallenge'
 
 const RowCaracterChallenge = (props) => {
   const [, dispatch] = useContext(ChallengeContext)
-  const { data: { results } } = props
+  const { listCaracter: { results } } = props
   const navigate = useNavigate()
 
   const onClick = (e, name, index) => {
     e.preventDefault()
-    const caracter = results?.filter(c => c.name === name)
-    dispatch({ type: 'CREATE', payload: caracter })
-    navigate(`/detail/${index}`)
+    dispatch({ type: 'CREATE', payload: name })
+    navigate(`/detail/id:${index}`)
   }
 
   return (
@@ -44,7 +43,7 @@ const results = PropTypes.shape({
   birthYear: PropTypes.string
 })
 RowCaracterChallenge.propTypes = {
-  data: PropTypes.shape({
+  listCaracter: PropTypes.shape({
     results: PropTypes.arrayOf(results)
   }).isRequired,
   setCaracter: PropTypes.func,
